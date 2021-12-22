@@ -1,0 +1,51 @@
+* {
+    box-sizing: border-box;
+}
+
+body, html {
+    height: 100%;
+    padding: 0;
+    margin: 0;
+    font-family:Arial, Helvetica, sans-serif;
+}
+
+
+header {
+    border-bottom: 1px solid black;
+    padding: 0;
+    align-items: center;
+    display: flex;
+    justify-content: space-between;
+}
+
+nav {
+    padding: 12px;
+}
+.post-list {
+    padding: 0;
+    margin: 8px;
+}
+
+.wrapper {
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    display:flex;
+}
+
+.edit-form-post {
+    margin-bottom: 11px;
+}
+
+
+article, section {
+    border-radius: 6px;
+    border: 1px solid black;
+    padding: 4px;
+    margin: 4px;
+}
+
+.comment-form {
+    margin: 6%;
+}
+
