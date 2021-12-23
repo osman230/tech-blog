@@ -1,31 +1,40 @@
 <!DOCTYPE html>
-<html lan="en">
+<html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewpoint" content="width=device-width, initial-scale=1.0">
-    <title>Tech Blog</title>
-    <link rel="stylesheet" href="/stylesheets/style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tech Blog</title>
+  <link rel="stylesheet" href="/stylesheets/style.css">
 </head>
+
 <body>
-    <div class="wrapper">
+  <div class="wrapper">
     <header>
-        <nav>
-            {{#if loggedIn}}
-            <a href="/" class="homepage">Homepage</a>
-            <a href="/dashboard">Dashboard</a>
-            <button id="logout" class="button">Log Out</button>
-            {{else}}
-            <a href="/login">Log In</a>
-            <a href="/signup">Sign Up</a>
-            {{/if}}
-        </nav>
+      <h1>
+        <p class="title">Tech Blog</p>
+      </h1>
+    
+    <nav>
+    {{#if loggedIn}}
+    <a href="/" class="homepage">Homepage</a>
+    <a href="/dashboard">Dashboard</a>
+    <button id="logout" class="btn-no-style">Logout</button>
+    {{else}}
+    <a href="/" class="homepage">Homepage</a>
+    <a href="/login">Login</a>
+    {{/if}}
+    </nav>
     </header>
     <main>
-        {{{ body }}}
+      {{{ body }}}
     </main>
-    </div>
+  </div>
+
     {{#if loggedIn}}
     <script src="/javascript/logout.js"></script>
     {{/if}}
+
 </body>
+
 </html>
