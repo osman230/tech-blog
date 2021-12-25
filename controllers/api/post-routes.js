@@ -90,8 +90,13 @@ router.post('/', withAuth, (req, res) => {
         content: req.body.content,
         user_id: req.session.user_id
     })
-    .then(postData => res.json(postData))
-    .catch(err => {
+    .then(postData => {
+        if (!postData) {
+            res.status(404).json({ message: 'Error: Please enter valid information' });
+            return;
+        }
+
+    })  .catch(err => {
         console.log(err);
         res.status(500).json(err);
     });
