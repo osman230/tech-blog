@@ -32,13 +32,18 @@ router.get('/', (req, res) => {
             }
         ]
     })
-    .then(postData => res.json(postData))
+    .then(postData => {
+        if (!postData) {
+            res.status(404).json({ message: 'Error: Please enter valid information' });
+            return;
+        }
+        res.json(postData);
+    })
     .catch(err => {
         console.log(err);
         res.status(500).json(err);
     });
 });
-
 router.get('/:id', (req, res) => {
     Post.findOne({
         where: {

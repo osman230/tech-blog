@@ -104,6 +104,10 @@ router.post('/login', (req, res) => {
             req.session.loggedIn = true;
 
             res.json({ user: userData, message: 'Logged in.' });
+        })
+        .catch(err => {
+            console.log(err);
+            res.status(500).json(err);
         });
     });
 });
